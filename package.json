@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "lint": "yarn prettier:test",
-    "test": "react-scripts test --coverage --watchAll=false",
+    "test": "react-scripts test",
     "test:watch": "react-scripts test --coverage --watchAll",
     "prettier:test": "prettier --check \"**/*.ts*\"",
     "prettier:fix": "prettier --write \"**/*.ts*\"",
@@ -65,7 +65,7 @@
     ]
   },
   "devDependencies": {
-    "husky": "^7.0.1",
-    "prettier": "^2.3.2"
+    "husky": "7.0.1",
+    "prettier": "2.3.2"
   }
 }
