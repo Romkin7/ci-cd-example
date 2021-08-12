@@ -19,8 +19,32 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "yarn prettier:test",
+    "test": "react-scripts test --coverage --watchAll=false",
+    "test:watch": "react-scripts test --coverage --watchAll",
+    "prettier:test": "prettier --check \"**/*.ts*\"",
+    "prettier:fix": "prettier --write \"**/*.ts*\"",
+    "serve": "cd tools/backend && node build/server/server.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn lint"
+    }
+  },
+  "lint-staged": {
+    "*.{tsx,ts,js,scss}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "tabWidth": 4,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "always",
+    "proseWrap": "always"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +63,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "husky": "^7.0.1",
+    "prettier": "^2.3.2"
   }
 }
