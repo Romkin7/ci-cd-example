@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "lint": "yarn prettier:test",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll=false",
     "test:watch": "react-scripts test --coverage --watchAll",
     "prettier:test": "prettier --check \"**/*.ts*\"",
     "prettier:fix": "prettier --write \"**/*.ts*\"",
