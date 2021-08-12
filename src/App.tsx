@@ -18,6 +18,7 @@ const App: FC = () => {
                 >
                     Learn React
                 </a>
+                <button>click me</button>
             </header>
         </div>
     );
